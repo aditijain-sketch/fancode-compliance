@@ -42,40 +42,43 @@
 </div>
 <div class="container">
   <div class="cards">
-    <div class="card total"><div class="num">96</div><div class="lbl">Total Foreign Vendors</div></div>
-    <div class="card ok">   <div class="num">0</div><div class="lbl">All Documents Valid</div></div>
-    <div class="card warn"> <div class="num">48</div><div class="lbl">Expiring Within 30 Days</div></div>
-    <div class="card danger"><div class="num">87</div><div class="lbl">Expired / Docs Missing</div></div>
+    <div class="card total"><div class="num">97</div><div class="lbl">Total Foreign Vendors</div></div>
+    <div class="card ok">   <div class="num">54</div><div class="lbl">Active Vendors</div></div>
+    <div class="card warn"> <div class="num">50</div><div class="lbl">Expiring Within 30 Days</div></div>
+    <div class="card danger"><div class="num">86</div><div class="lbl">Expired / Docs Missing</div></div>
   </div>
   <div class="toolbar">
     <input type="text" id="search" placeholder="🔍  Search vendor name or POC…" oninput="applyFilters()">
-    <button class="filter-btn active" onclick="setFilter('all',this)">All (96)</button>
-    <button class="filter-btn" onclick="setFilter('ok-clean',this)">✅ All Clear (0)</button>
-    <button class="filter-btn" onclick="setFilter('expiring',this)">⚠️ Expiring &lt;30d (48)</button>
-    <button class="filter-btn" onclick="setFilter('problem',this)">🔴 Action Needed (87)</button>
-    <span class="count-label" id="countLabel">Showing 96 vendors</span>
+    <button class="filter-btn active" onclick="setFilter('all',this)">All (97)</button>
+    <button class="filter-btn" onclick="setFilter('active',this)">🟢 Active (54)</button>
+    <button class="filter-btn" onclick="setFilter('inactive',this)">⚪ Not Active (43)</button>
+    <button class="filter-btn" onclick="setFilter('expiring',this)">⚠️ Expiring &lt;30d (50)</button>
+    <button class="filter-btn" onclick="setFilter('problem',this)">🔴 Action Needed (86)</button>
+    <span class="count-label" id="countLabel">Showing 97 vendors</span>
   </div>
   <div class="table-wrap">
     <table>
       <thead><tr>
         <th style="padding-left:16px;">Vendor</th>
         <th>POC</th>
+        <th style="text-align:center;min-width:110px;">Vendor Status</th>
         <th style="text-align:center;min-width:115px;">No PE</th>
         <th style="text-align:center;min-width:115px;">Form 10F</th>
         <th style="text-align:center;min-width:115px;">TRC</th>
-        <th style="text-align:center;">Overall</th>
         <th>Remarks</th>
       </tr></thead>
       <tbody id="tbody">
         <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="active"
             data-name="img media" data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Img Media
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200157</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200157.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
@@ -88,20 +91,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="false"
+            data-vendorstatus="active"
             data-name="img arena uk" data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Img Arena Uk
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200231</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200231.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2025</div>
@@ -114,20 +118,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="active"
             data-name="total sports marketing fze" data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Total Sports Marketing Fze
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200029</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200029.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
@@ -140,20 +145,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="active"
             data-name="cricket westindies inc" data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Cricket Westindies Inc
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200028</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200028.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -166,20 +172,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">16 Feb 2026</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
-            data-name="formula one world championship limited" data-poc="gayatri"
+            data-vendorstatus="active"
+            data-name="formula one world championship limited" data-poc="rishabh"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Formula One World Championship Limited
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200346</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200346.0</div>
           </td>
-          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Rishabh</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -192,20 +199,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="true"
-            data-name="mx1 ltd" data-poc="gayatri"
+            data-vendorstatus="active"
+            data-name="mx1 ltd" data-poc="rishabh"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Mx1 Ltd
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200347</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200347.0</div>
           </td>
-          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Rishabh</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -218,20 +226,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
-            data-name="pitch international llp" data-poc="gayatri"
+            data-vendorstatus="active"
+            data-name="pitch international llp" data-poc="jiva"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Pitch International LLP
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200251</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200251.0</div>
           </td>
-          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
@@ -244,20 +253,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="world rugby tournaments limited" data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             World Rugby Tournaments Limited
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200259</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200259.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#f9fafb;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
@@ -270,20 +280,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2023</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="not active"
             data-name="the copyright promotions licensing" data-poc="rishabh"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             The Copyright Promotions Licensing
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200263</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200263.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Rishabh</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -296,20 +307,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2024</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="1stadia inc" data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             1Stadia Inc
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200264</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200264.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#f9fafb;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
@@ -322,20 +334,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="northern territory cricket limited" data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Northern Territory Cricket Limited
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200275</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200275.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2024</div>
@@ -348,20 +361,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="rugby world cup limited" data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Rugby World Cup Limited
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200281</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200281.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#f9fafb;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
@@ -374,20 +388,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="misport south africa (pty) ltd" data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Misport South Africa (Pty) Ltd
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200288</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200288.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2024</div>
@@ -400,20 +415,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2024</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="international boxing association" data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             International Boxing Association
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200289</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200289.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2024</div>
@@ -426,20 +442,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2024</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="active"
             data-name="smw global fz lle" data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Smw Global Fz Lle
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200305</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200305.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2023</div>
@@ -452,20 +469,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="admana technology pvt ltd." data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Admana Technology Pvt Ltd.
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200322</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200322.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
@@ -478,20 +496,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Jul 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="footballco media limited" data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Footballco Media Limited
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200325</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200325.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#f9fafb;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
@@ -504,20 +523,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2020</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="sm collab ventures sdn bhd" data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Sm Collab Ventures Sdn Bhd
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200334</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200334.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2024</div>
@@ -530,20 +550,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2024</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="active"
             data-name="trans group fze" data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Trans Group Fze
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200338</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200338.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -556,20 +577,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="ok" data-expiring="true"
+            data-vendorstatus="not active"
             data-name="japan professional football league" data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Japan Professional Football League
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200339</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200339.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -582,20 +604,21 @@
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">All Clear</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d) | TRC expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="jet media network limited" data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Jet Media Network Limited
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200344</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200344.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2024</div>
@@ -608,20 +631,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2024</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="bombay sports co. ltd." data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Bombay Sports Co. Ltd.
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200349</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200349.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">28 Feb 2023</div>
@@ -634,20 +658,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2023</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="versatile deployment solutions l.l" data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Versatile Deployment Solutions L.L
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200350</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200350.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2025</div>
@@ -660,20 +685,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="ok" data-expiring="true"
+            data-vendorstatus="active"
             data-name="bangladesh cricket board" data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Bangladesh Cricket Board
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200364</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200364.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -686,20 +712,21 @@
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">30 Jun 2026</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">All Clear</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="not active"
             data-name="persatuan cricket indonesia" data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Persatuan Cricket Indonesia
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200365</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200365.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -712,20 +739,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="false"
+            data-vendorstatus="active"
             data-name="iris advisors limited" data-poc="jiva"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Iris Advisors Limited
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200366</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200366.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
@@ -738,20 +766,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="vw volleyball world sa" data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Vw Volleyball World Sa
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200372</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200372.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2024</div>
@@ -764,20 +793,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2024</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="ok" data-expiring="true"
-            data-name="nagravision sarl" data-poc="aayush"
+            data-vendorstatus="active"
+            data-name="nagravision sarl" data-poc="sumedh"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Nagravision Sarl
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200375</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200375.0</div>
           </td>
-          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Aayush</td>
+          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Sumedh</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2026</div>
@@ -790,20 +820,21 @@
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2026</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">All Clear</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="chance to shine sdn. bhd." data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Chance To Shine Sdn. Bhd.
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200384</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200384.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2025</div>
@@ -816,20 +847,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2024</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="fanatics (international) limited" data-poc="rishabh"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Fanatics (International) Limited
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200391</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200391.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Rishabh</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#f9fafb;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
@@ -842,20 +874,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="false"
-            data-name="formula motorsport limited" data-poc="gayatri"
+            data-vendorstatus="active"
+            data-name="formula motorsport limited" data-poc="rishabh"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Formula Motorsport Limited
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200397</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200397.0</div>
           </td>
-          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Rishabh</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
@@ -868,20 +901,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2024</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="not active"
             data-name="gloucestershire county cricket club limited" data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Gloucestershire County Cricket Club Limited
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200400</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200400.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -894,20 +928,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="not active"
             data-name="glamorgan county cricket club ltd" data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Glamorgan County Cricket Club Ltd
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200414</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200414.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -920,20 +955,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
-            data-name="sportfive uk ltd" data-poc="rishabh"
+            data-vendorstatus="active"
+            data-name="sportfive uk ltd" data-poc="jiva"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Sportfive Uk Ltd
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200416</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200416.0</div>
           </td>
-          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Rishabh</td>
+          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
@@ -946,20 +982,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="not active"
             data-name="worcestershire county cricket trading limited" data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Worcestershire County Cricket Trading Limited
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200417</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200417.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -972,20 +1009,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="ok" data-expiring="true"
+            data-vendorstatus="active"
             data-name="asian football confederation" data-poc="rishabh"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Asian Football Confederation
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200423</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200423.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Rishabh</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2026</div>
@@ -996,22 +1034,23 @@
     </td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
-      <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">29 Jan 2027</div>
+      <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2026</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">All Clear</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
-            No PE & TRC updated for 2026. Form 10F not submitted in this batch (existing entry valid till 31-Mar-2026 — renewal needed for FY 2026-27). TIN 787703100 matched across No PE and T…
+            ⚠️ Expiring soon: Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="asia football marketing fz-llc" data-poc="rishabh"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Asia Football Marketing Fz-Llc
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200424</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200424.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Rishabh</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2024</div>
@@ -1024,20 +1063,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">14 Aug 2024</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
-            data-name="real madrid club de futbol" data-poc="gayatri"
+            data-vendorstatus="active"
+            data-name="real madrid club de futbol" data-poc="jiva"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Real Madrid Club De Futbol
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200431</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200431.0</div>
           </td>
-          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
@@ -1050,20 +1090,21 @@
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2026</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="not active"
             data-name="somerset county cricket club ltd" data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Somerset County Cricket Club Ltd
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200433</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200433.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -1076,20 +1117,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="not active"
             data-name="durham cricket cic" data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Durham Cricket Cic
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200438</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200438.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -1102,20 +1144,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="grup mediapro slu" data-poc="rishabh"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Grup Mediapro Slu
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200470</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200470.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Rishabh</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
@@ -1128,20 +1171,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="a.d release pvt. ltd." data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             A.D Release Pvt. Ltd.
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200480</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200480.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2025</div>
@@ -1154,20 +1198,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">15 Jul 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
-            data-name="sportfive asia pte ltd" data-poc="rishabh"
+            data-vendorstatus="active"
+            data-name="sportfive asia pte ltd" data-poc="jiva"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Sportfive Asia Pte Ltd
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200487</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200487.0</div>
           </td>
-          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Rishabh</td>
+          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -1180,20 +1225,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="ok" data-expiring="true"
+            data-vendorstatus="active"
             data-name="visionular inc." data-poc="guruwinder"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Visionular Inc.
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200488</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200488.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Guruwinder</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">30 Sep 2026</div>
@@ -1206,20 +1252,21 @@
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2026</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">All Clear</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="false"
+            data-vendorstatus="active"
             data-name="browserstack,inc" data-poc="pramod kumar"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Browserstack,Inc
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200008</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200008.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Pramod Kumar</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2024</div>
@@ -1232,20 +1279,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2024</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="false"
+            data-vendorstatus="active"
             data-name="amazon web services inc" data-poc="amol jadhav"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Amazon Web Services Inc
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200015</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200015.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Amol Jadhav</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2024</div>
@@ -1258,20 +1306,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2024</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="european cricket league ag" data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             European Cricket League Ag
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200036</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200036.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#f9fafb;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
@@ -1284,20 +1333,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="active"
             data-name="t tens sports management fzc" data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             T Tens Sports Management Fzc
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200037</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200037.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f9fafb;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
@@ -1310,20 +1360,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="active"
             data-name="icc business corporation fz llc" data-poc="rishabh"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Icc Business Corporation Fz Llc
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200048</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200048.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Rishabh</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -1336,20 +1387,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">09 Jul 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
-            URGENT: TRC expired 09-Jul-2025 — new TRC required. Form 10F expires 31-Mar-2026. No PE revised 10-Mar-2026 (valid 01-Apr-2025 to 31-Mar-2026, 365 days OK). Note: No PE shows TRN 1…
+            ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="true"
+            data-vendorstatus="active"
             data-name="afghanistan cricket board" data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Afghanistan Cricket Board
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200064</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200064.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -1362,20 +1414,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="green bean sports marketing" data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Green Bean Sports Marketing
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200067</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200067.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
@@ -1388,20 +1441,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">24 May 2024</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="false"
-            data-name="sportradar ag" data-poc="gayatri"
+            data-vendorstatus="active"
+            data-name="sportradar ag" data-poc="jiva"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Sportradar Ag
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200078</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200078.0</div>
           </td>
-          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2025</div>
@@ -1414,20 +1468,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2024</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="not active"
             data-name="england and wales cricket board ltd" data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             England And Wales Cricket Board Ltd
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200086</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200086.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2024</div>
@@ -1440,20 +1495,21 @@
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: Form 10F expiring 31 Mar 2026 (6d) | TRC expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="sntv" data-poc="foma"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Sntv
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200150</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200150.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Foma</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2024</div>
@@ -1466,20 +1522,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="active"
             data-name="figma,inc." data-poc="rejo"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Figma,Inc.
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200152</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200152.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Rejo</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
@@ -1492,20 +1549,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="aceb, sau" data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Aceb, Sau
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200154</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200154.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2023</div>
@@ -1518,20 +1576,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2023</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="ok" data-expiring="true"
+            data-vendorstatus="active"
             data-name="marron media group pty ltd" data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Marron Media Group Pty Ltd
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200159</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200159.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -1544,20 +1603,21 @@
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">03 Jun 2026</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">All Clear</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="true"
+            data-vendorstatus="not active"
             data-name="malaysian cricket association" data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Malaysian Cricket Association
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200162</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200162.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -1570,20 +1630,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="true"
+            data-vendorstatus="active"
             data-name="ace sports network inc" data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Ace Sports Network Inc
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200165</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200165.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -1596,20 +1657,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="true"
+            data-vendorstatus="active"
             data-name="nirvana digital limited" data-poc="abhishek iyer"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Nirvana Digital Limited
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200169</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200169.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Abhishek Iyer</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -1622,20 +1684,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
-            data-name="google asia pacific pte. ltd." data-poc="ashish reddy"
+            data-vendorstatus="active"
+            data-name="google asia pacific pte. ltd." data-poc="sumedh"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Google Asia Pacific Pte. Ltd.
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200172</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200172.0</div>
           </td>
-          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Ashish Reddy</td>
+          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Sumedh</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -1648,20 +1711,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="japan cricket association" data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Japan Cricket Association
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200175</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200175.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2025</div>
@@ -1674,20 +1738,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2024</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="active"
             data-name="t c m sports management l.l.c - uae" data-poc="jiva"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             T C M Sports Management L.L.C - Uae
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200232</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200232.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -1700,20 +1765,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Jan 2026</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="false"
-            data-name="mediapro (shanghai) commercial" data-poc="gayatri"
+            data-vendorstatus="not active"
+            data-name="mediapro (shanghai) commercial" data-poc="jiva"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Mediapro (Shanghai) Commercial
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200233</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200233.0</div>
           </td>
-          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2025</div>
@@ -1726,20 +1792,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2024</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="not active"
             data-name="euroleague ventures sa" data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Euroleague Ventures Sa
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200234</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200234.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -1752,20 +1819,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
-            data-name="kuwait cricket club" data-poc="jiva"
+            data-vendorstatus="not active"
+            data-name="kuwait cricket club" data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Kuwait Cricket Club
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200235</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200235.0</div>
           </td>
-          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -1778,20 +1846,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
-            data-name="cool & smooth t20" data-poc="gayatri"
+            data-vendorstatus="not active"
+            data-name="cool & smooth t20" data-poc="jiva"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Cool & Smooth T20
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200237</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200237.0</div>
           </td>
-          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
@@ -1804,20 +1873,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="ok" data-expiring="true"
-            data-name="real federación española de fútbol" data-poc="gayatri"
+            data-vendorstatus="not active"
+            data-name="real federación española de fútbol" data-poc="jiva"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Real Federación Española De Fútbol
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200238</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200238.0</div>
           </td>
-          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -1830,20 +1900,21 @@
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2026</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">All Clear</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
-            data-name="the ipg group" data-poc="gayatri"
+            data-vendorstatus="not active"
+            data-name="the ipg group" data-poc="rishabh"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             The Ipg Group
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200239</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200239.0</div>
           </td>
-          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Rishabh</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2025</div>
@@ -1856,20 +1927,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="active"
             data-name="surveysparrow inc" data-poc="aakash"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             SurveySparrow Inc
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200361</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200361.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Aakash</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -1882,20 +1954,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="active"
             data-name="megaport (usa) inc" data-poc="amol jadhav"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Megaport (USA) Inc
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200258</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200258.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Amol Jadhav</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2025</div>
@@ -1908,20 +1981,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="active"
             data-name="hampshire sports inc" data-poc="jiva"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Hampshire Sports Inc
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">1000000124</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">1000000124.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -1934,20 +2008,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="active"
             data-name="fiba (federation internationale de basketball)" data-poc="jiva"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             FIBA (Federation Internationale De Basketball)
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200593</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200593.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2025</div>
@@ -1960,20 +2035,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2024</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
-            data-name="dorna sports s.l" data-poc="gayatri"
+            data-vendorstatus="active"
+            data-name="dorna sports s.l" data-poc="rishabh"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Dorna Sports S.L
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200567</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200567.0</div>
           </td>
-          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Rishabh</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
@@ -1986,20 +2062,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="not active"
             data-name="times internet (uk) ltd" data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Times Internet (UK) Ltd
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200589</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200589.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -2012,20 +2089,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="walnut media dwc llc" data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Walnut Media DWC LLC
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200551</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200551.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
@@ -2038,20 +2116,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="active"
             data-name="augusta national, inc." data-poc="jiva"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Augusta National, Inc.
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200590</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200590.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f9fafb;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
@@ -2064,20 +2143,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="active"
             data-name="sri lanka cricket" data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Sri Lanka Cricket
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200597</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200597.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -2090,20 +2170,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="moloco, inc" data-poc="suyash"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Moloco, Inc
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200546</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200546.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Suyash</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#f9fafb;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
@@ -2116,20 +2197,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="true"
+            data-vendorstatus="active"
             data-name="euro vision services sa" data-poc="rishabh"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Euro Vision Services SA
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200600</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200600.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Rishabh</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -2142,20 +2224,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="active"
             data-name="pga tour inc" data-poc="jiva"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             PGA tour INC
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200654</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200654.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
@@ -2168,20 +2251,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="active"
             data-name="pga tour enterprises, llc" data-poc="jiva"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             PGA TOUR Enterprises, LLC
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200651</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200651.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
@@ -2194,20 +2278,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="false"
+            data-vendorstatus="active"
             data-name="united states golf association" data-poc="jiva"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             United States Golf Association
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200655</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200655.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
@@ -2220,20 +2305,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="active"
             data-name="ento ai fz llc" data-poc="foma"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Ento AI FZ LLC
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200670</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200670.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Foma</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f9fafb;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
@@ -2246,20 +2332,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="active"
             data-name="perform content limited" data-poc="apurv"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Perform Content Limited
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200221</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200221.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Apurv</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f9fafb;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
@@ -2272,20 +2359,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="active"
             data-name="cricket australia" data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Cricket Australia
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200074</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200074.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -2298,20 +2386,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d) | Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="active"
             data-name="union des associations europeennes" data-poc="jiva"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Union des Associations Europeennes
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200565</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200565.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
@@ -2324,20 +2413,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
+            data-vendorstatus="not active"
             data-name="central asian football association" data-poc="jiva"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Central Asian Football Association
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200687</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200687.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
@@ -2350,20 +2440,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="true"
+            data-vendorstatus="active"
             data-name="trans world international llc" data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Trans World International LLC
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200702</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200702.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -2376,20 +2467,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="true"
+            data-vendorstatus="active"
             data-name="total sports management" data-poc="gayatri"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Total Sports Management
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200703</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200703.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
@@ -2402,20 +2494,21 @@
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="active"
             data-name="essen group ltd" data-poc="jiva"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Essen Group Ltd
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200682</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200682.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
@@ -2428,20 +2521,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="ok" data-expiring="true"
-            data-name="uefa club competitions sa" data-poc="rishabh"
+            data-vendorstatus="active"
+            data-name="uefa club competitions sa" data-poc="jiva"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             UEFA Club Competitions SA
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200697</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200697.0</div>
           </td>
-          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Rishabh</td>
+          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2026</div>
@@ -2454,49 +2548,51 @@
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2026</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">All Clear</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
-            Note: Swiss TRC uses cantonal ref no. 88086; Form 10F & No PE use Swiss UID CHE461495963 (country-specific format difference). Form 10F expires 31-Mar-2026.  ⚠️ Expiring soon: Form…
+            ⚠️ Expiring soon: Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
-        <tr class="vrow" data-status="missing" data-expiring="false"
+        <tr class="vrow" data-status="ok" data-expiring="true"
+            data-vendorstatus="active"
             data-name="new zealand cricket inc." data-poc="gayatri"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             New Zealand Cricket Inc.
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200697</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200697.0</div>
           </td>
-          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">gayatri</td>
-          <td style="background:#f9fafb;text-align:center;padding:10px 8px;vertical-align:middle;">
-      <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
-      
+          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Gayatri</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
+          <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
+      <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
+      <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2026</div>
     </td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
-      
+      <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
     </td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
-      
+      <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2026</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
-            Note: No PE declaration not submitted
+            ⚠️ Expiring soon: Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
-        <tr class="vrow" data-status="missing" data-expiring="true"
+        <tr class="vrow" data-status="expired" data-expiring="true"
+            data-vendorstatus="active"
             data-name="liga nacional de fútbol profesional" data-poc="rishabh"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
-            LIGA NACIONAL DE FÚTBOL PROFESIONAL
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200016</div>
+            Liga Nacional De Fútbol Profesional
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200016.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Rishabh</td>
-          <td style="background:#f9fafb;text-align:center;padding:10px 8px;vertical-align:middle;">
-      <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
-      
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
+          <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
+      <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
+      <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2026</div>
     </td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
@@ -2506,20 +2602,21 @@
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="true"
+            data-vendorstatus="active"
             data-name="atp media operations limited" data-poc="jiva"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             ATP Media Operations Limited
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200733</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200733.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f9fafb;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
       
@@ -2532,20 +2629,21 @@
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2026</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Docs Missing</span></td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: Form 10F expiring 31 Mar 2026 (6d)
           </td>
         </tr>
         <tr class="vrow" data-status="ok" data-expiring="true"
+            data-vendorstatus="active"
             data-name="servicios audiovisuales overon" data-poc="rishabh"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
             onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fafafa'">
           <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
             Servicios Audiovisuales Overon
-            <div style="font-size:11px;color:#94a3b8;font-weight:400;">2000000861</div>
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">2000000861.0</div>
           </td>
           <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Rishabh</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">01 Oct 2026</div>
@@ -2558,7 +2656,33 @@
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2026</div>
     </td>
-          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">All Clear</span></td>
+          <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
+            ⚠️ Expiring soon: Form 10F expiring 31 Mar 2026 (6d)
+          </td>
+        </tr>
+        <tr class="vrow" data-status="ok" data-expiring="true"
+            data-vendorstatus="active"
+            data-name="pga european tour productions limited" data-poc="jiva"
+            style="background:#fff;border-bottom:1px solid #f0f0f0;"
+            onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#fff'">
+          <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#1e293b;min-width:190px;">
+            PGA European Tour Productions Limited
+            <div style="font-size:11px;color:#94a3b8;font-weight:400;">200762.0</div>
+          </td>
+          <td style="padding:10px 8px;font-size:12px;color:#475569;min-width:75px;">Jiva</td>
+          <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
+          <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
+      <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
+      <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2026</div>
+    </td>
+          <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
+      <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
+      <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
+    </td>
+          <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
+      <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
+      <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2026</div>
+    </td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: Form 10F expiring 31 Mar 2026 (6d)
           </td>
@@ -2577,7 +2701,8 @@
     rows.forEach(r=>{
       let match=false;
       if(activeFilter==='all') match=true;
-      else if(activeFilter==='ok-clean') match=r.dataset.status==='ok'&&r.dataset.expiring==='false';
+      else if(activeFilter==='active') match=r.dataset.vendorstatus==='active';
+      else if(activeFilter==='inactive') match=r.dataset.vendorstatus==='not active';
       else if(activeFilter==='expiring') match=r.dataset.expiring==='true';
       else if(activeFilter==='problem') match=r.dataset.status==='expired'||r.dataset.status==='missing';
       const matchSearch=!q||r.dataset.name.includes(q)||r.dataset.poc.includes(q);

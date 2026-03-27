@@ -45,7 +45,7 @@
     <div class="card total"><div class="num">99</div><div class="lbl">Total Foreign Vendors</div></div>
     <div class="card ok">   <div class="num">56</div><div class="lbl">Active Vendors</div></div>
     <div class="card warn"> <div class="num">52</div><div class="lbl">Expiring Within 30 Days</div></div>
-    <div class="card danger"><div class="num">87</div><div class="lbl">Expired / Docs Missing</div></div>
+    <div class="card danger"><div class="num">86</div><div class="lbl">Expired / Docs Missing</div></div>
   </div>
   <div class="toolbar">
     <input type="text" id="search" placeholder="🔍  Search vendor name or POC…" oninput="applyFilters()">
@@ -53,7 +53,7 @@
     <button class="filter-btn" onclick="setFilter('active',this)">🟢 Active (56)</button>
     <button class="filter-btn" onclick="setFilter('inactive',this)">⚪ Not Active (43)</button>
     <button class="filter-btn" onclick="setFilter('expiring',this)">⚠️ Expiring &lt;30d (52)</button>
-    <button class="filter-btn" onclick="setFilter('problem',this)">🔴 Action Needed (87)</button>
+    <button class="filter-btn" onclick="setFilter('problem',this)">🔴 Action Needed (86)</button>
     <span class="count-label" id="countLabel">Showing 99 vendors</span>
   </div>
   <div class="table-wrap">
@@ -1688,7 +1688,7 @@
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (4d)
           </td>
         </tr>
-        <tr class="vrow" data-status="expired" data-expiring="true"
+        <tr class="vrow" data-status="ok" data-expiring="true"
             data-vendorstatus="active"
             data-name="google asia pacific pte. ltd." data-poc="sumedh"
             style="background:#fff;border-bottom:1px solid #f0f0f0;"
@@ -1707,9 +1707,9 @@
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
       <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Mar 2026</div>
     </td>
-          <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
-      <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
-      <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2025</div>
+          <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
+      <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
+      <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2026</div>
     </td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
             ⚠️ Expiring soon: No PE expiring 31 Mar 2026 (4d) | Form 10F expiring 31 Mar 2026 (4d)

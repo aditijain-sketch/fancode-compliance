@@ -36,9 +36,12 @@
 <div class="topbar">
   <div>
     <h1>Fan<span>Code</span> &nbsp;·&nbsp; Vendor Compliance Dashboard</h1>
-    <div class="sub">Finance &amp; Controllership &nbsp;|&nbsp; Last updated: 08 April 2026</div>
+    <div class="sub">Finance &amp; Controllership &nbsp;|&nbsp; Last updated: 23 April 2026</div>
   </div>
-  <div style="color:#60a5fa;font-size:13px;">Sporta Technologies Pvt. Ltd.</div>
+  <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
+    <div style="color:#60a5fa;font-size:13px;">Sporta Technologies Pvt. Ltd.</div>
+    <a href="C:\Users\Aditi Jain\Desktop\Claude\Foreign vendor documents\Vendor documents" style="font-size:12px;color:#93c5fd;text-decoration:none;background:rgba(255,255,255,0.08);padding:4px 10px;border-radius:6px;border:1px solid rgba(255,255,255,0.15);">📁 Vendor Documents Folder</a>
+  </div>
 </div>
 <div class="container">
   <div class="cards">
@@ -55,6 +58,13 @@
     <button class="filter-btn" onclick="setFilter('expiring',this)">⚠️ Expiring &lt;30d (0)</button>
     <button class="filter-btn" onclick="setFilter('problem',this)">🔴 Action Needed (102)</button>
     <span class="count-label" id="countLabel">Showing 102 vendors</span>
+    <div style="position:relative;margin-left:auto;">
+      <button class="filter-btn" id="exportBtn" onclick="toggleExportMenu()" style="background:#0f172a;color:#fff;border-color:#0f172a;padding:7px 16px;">⬇ Export</button>
+      <div id="exportMenu" style="display:none;position:absolute;right:0;top:110%;background:#fff;border:1px solid #e2e8f0;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.12);z-index:99;min-width:150px;overflow:hidden;">
+        <div onclick="exportData('csv')"  style="padding:10px 16px;font-size:13px;cursor:pointer;color:#1e293b;" onmouseover="this.style.background='#f1f5f9'" onmouseout="this.style.background='#fff'">📄 Export as CSV</div>
+        <div onclick="exportData('xlsx')" style="padding:10px 16px;font-size:13px;cursor:pointer;color:#1e293b;border-top:1px solid #f1f5f9;" onmouseover="this.style.background='#f1f5f9'" onmouseout="this.style.background='#fff'">📊 Export as Excel</div>
+      </div>
+    </div>
   </div>
   <div class="table-wrap">
     <table>
@@ -2890,7 +2900,7 @@
             
           </td>
         </tr>
-        <tr class="vrow" data-status="missing" data-expiring="false"
+        <tr class="vrow" data-status="problem" data-expiring="false"
             data-vendorstatus="active"
             data-name="uefa club competitions sa" data-poc="jiva"
             style="background:#fafafa;border-bottom:1px solid #f0f0f0;"
@@ -2903,7 +2913,7 @@
           <td style="padding:10px 8px;text-align:center;white-space:nowrap;"><span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Active</span></td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
-      <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2026</div>
+      <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">01 Jan – 31 Dec 2026</div>
     </td>
           <td style="background:#fff1f2;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#fee2e2;color:#991b1b;border:1px solid #991b1b33;">Expired</span>
@@ -2911,14 +2921,16 @@
     </td>
           <td style="background:#f0fdf4;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#dcfce7;color:#16a34a;border:1px solid #16a34a33;">Valid</span>
-      <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">31 Dec 2026</div>
+      <div style="font-size:12px;font-weight:600;color:#374151;margin-top:4px;">FY 2026</div>
     </td>
           <td style="background:#f9fafb;text-align:center;padding:10px 8px;vertical-align:middle;">
       <span class="badge" style="background:#f3f4f6;color:#6b7280;border:1px solid #6b728033;">Not Submitted</span>
-      
     </td>
           <td style="padding:10px 8px;font-size:11px;color:#64748b;max-width:240px;word-wrap:break-word;line-height:1.5;">
-            
+            <strong style="color:#dc2626;">Form 10F:</strong> Expired 31-Mar-2026 — File Form 41 for FY 2026-27 immediately. TIN on Form 10F (CHE461495963) does not match TRC TIN (88'086) — Form 10F to be re-filed with correct TIN per TRC.<br>
+            <strong style="color:#16a34a;">No PE:</strong> Valid ✓ | Signed by Richard Brunt | Period 01-Jan to 31-Dec-2026.<br>
+            <strong style="color:#16a34a;">TRC:</strong> Valid ✓ | TIN 88'086 (authoritative) | Issued 06-Jan-2026.<br>
+            <strong>Form 10F ACK:</strong> 555398360131125 (filed 13-Nov-2025).
           </td>
         </tr>
         <tr class="vrow" data-status="missing" data-expiring="false"
@@ -3236,6 +3248,77 @@
   </div>
 </div>
 <script>
+  /* ── Export helpers ── */
+  function toggleExportMenu(){
+    const m=document.getElementById('exportMenu');
+    m.style.display=m.style.display==='none'?'block':'none';
+  }
+  document.addEventListener('click',function(e){
+    if(!document.getElementById('exportBtn').contains(e.target))
+      document.getElementById('exportMenu').style.display='none';
+  });
+
+  function getVisibleRows(){
+    return [...document.querySelectorAll('.vrow')].filter(r=>r.style.display!=='none');
+  }
+
+  function rowToArray(r){
+    const tds=r.querySelectorAll('td');
+    const clean=el=>el.innerText.trim().replace(/\s*\n\s*/g,' | ').replace(/\s{2,}/g,' ');
+    // Vendor name + ID combined from td[0]
+    const nameLines=tds[0].innerText.trim().split('\n').map(s=>s.trim()).filter(Boolean);
+    return [
+      nameLines[0]||'',          // Vendor Name
+      nameLines[1]||'',          // Vendor ID
+      clean(tds[1]),              // POC
+      clean(tds[2]),              // Vendor Status
+      clean(tds[3]),              // No PE
+      clean(tds[4]),              // Form 10F
+      clean(tds[5]),              // TRC
+      clean(tds[6]),              // Form 41
+      clean(tds[7])               // Remarks
+    ];
+  }
+
+  const HEADERS=['Vendor Name','Vendor ID','POC','Vendor Status','No PE','Form 10F','TRC','Form 41','Remarks'];
+
+  function exportData(fmt){
+    document.getElementById('exportMenu').style.display='none';
+    const rows=getVisibleRows().map(rowToArray);
+    const ts=new Date().toISOString().slice(0,10);
+    if(fmt==='csv'){
+      const escape=v=>'"'+String(v).replace(/"/g,'""')+'"';
+      const csv=[HEADERS,...rows].map(r=>r.map(escape).join(',')).join('\r\n');
+      const blob=new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8;'});
+      triggerDownload(blob,'VendorCompliance_'+ts+'.csv');
+    } else {
+      /* Excel via SheetJS – load on demand */
+      if(typeof XLSX==='undefined'){
+        const s=document.createElement('script');
+        s.src='https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js';
+        s.onload=()=>buildXlsx(rows,ts);
+        document.head.appendChild(s);
+      } else { buildXlsx(rows,ts); }
+    }
+  }
+
+  function buildXlsx(rows,ts){
+    const wb=XLSX.utils.book_new();
+    const ws=XLSX.utils.aoa_to_sheet([HEADERS,...rows]);
+    /* Column widths */
+    ws['!cols']=[{wch:30},{wch:10},{wch:12},{wch:14},{wch:22},{wch:22},{wch:22},{wch:16},{wch:60}];
+    XLSX.utils.book_append_sheet(wb,ws,'Compliance');
+    XLSX.writeFile(wb,'VendorCompliance_'+ts+'.xlsx');
+  }
+
+  function triggerDownload(blob,filename){
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);
+    a.download=filename;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  }
+
   let activeFilter='all';
   function setFilter(f,btn){activeFilter=f;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');applyFilters();}
   function applyFilters(){

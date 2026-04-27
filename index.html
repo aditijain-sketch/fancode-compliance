@@ -42,18 +42,18 @@
 </div>
 <div class="container">
   <div class="cards">
-    <div class="card total"><div class="num">102</div><div class="lbl">Total Foreign Vendors</div></div>
-    <div class="card ok">   <div class="num">59</div><div class="lbl">Active Vendors</div></div>
-    <div class="card warn"> <div class="num">0</div><div class="lbl">Expiring Within 30 Days</div></div>
-    <div class="card danger"><div class="num">102</div><div class="lbl">Expired / Docs Missing</div></div>
+    <div class="card total"><div class="num" id="cTotal">—</div><div class="lbl">Total Foreign Vendors</div></div>
+    <div class="card ok">   <div class="num" id="cActive">—</div><div class="lbl">Active Vendors</div></div>
+    <div class="card warn"> <div class="num" id="cExpiring">—</div><div class="lbl">Expiring Within 30 Days</div></div>
+    <div class="card danger"><div class="num" id="cDanger">—</div><div class="lbl">Expired / Docs Missing</div></div>
   </div>
   <div class="toolbar">
     <input type="text" id="search" placeholder="🔍  Search vendor name or POC…" oninput="applyFilters()">
-    <button class="filter-btn active" onclick="setFilter('all',this)">All (102)</button>
-    <button class="filter-btn" onclick="setFilter('active',this)">🟢 Active (59)</button>
-    <button class="filter-btn" onclick="setFilter('inactive',this)">⚪ Not Active (43)</button>
-    <button class="filter-btn" onclick="setFilter('expiring',this)">⚠️ Expiring &lt;30d (0)</button>
-    <button class="filter-btn" onclick="setFilter('problem',this)">🔴 Action Needed (102)</button>
+    <button class="filter-btn active" id="btnAll"      onclick="setFilter('all',this)">All</button>
+    <button class="filter-btn"        id="btnActive"   onclick="setFilter('active',this)">🟢 Active</button>
+    <button class="filter-btn"        id="btnInactive" onclick="setFilter('inactive',this)">⚪ Not Active</button>
+    <button class="filter-btn"        id="btnExpiring" onclick="setFilter('expiring',this)">⚠️ Expiring &lt;30d</button>
+    <button class="filter-btn"        id="btnProblem"  onclick="setFilter('problem',this)">🔴 Action Needed</button>
     <span class="count-label" id="countLabel">Showing 102 vendors</span>
     <div style="position:relative;margin-left:auto;">
       <button class="filter-btn" id="exportBtn" onclick="toggleExportMenu()" style="background:#0f172a;color:#fff;border-color:#0f172a;padding:7px 16px;">⬇ Export</button>
@@ -3350,6 +3350,24 @@
     URL.revokeObjectURL(a.href);
   }
 
+  function updateSummary(){
+    const rows=[...document.querySelectorAll('.vrow')];
+    const total=rows.length;
+    const active=rows.filter(r=>r.dataset.vendorstatus==='active').length;
+    const inactive=rows.filter(r=>r.dataset.vendorstatus==='not active').length;
+    const expiring=rows.filter(r=>r.dataset.expiring==='true').length;
+    const danger=rows.filter(r=>r.dataset.vendorstatus==='active'&&(r.dataset.status==='problem'||r.dataset.status==='missing')).length;
+    document.getElementById('cTotal').textContent=total;
+    document.getElementById('cActive').textContent=active;
+    document.getElementById('cExpiring').textContent=expiring;
+    document.getElementById('cDanger').textContent=danger;
+    document.getElementById('btnAll').textContent='All ('+total+')';
+    document.getElementById('btnActive').textContent='🟢 Active ('+active+')';
+    document.getElementById('btnInactive').textContent='⚪ Not Active ('+inactive+')';
+    document.getElementById('btnExpiring').textContent='⚠️ Expiring <30d ('+expiring+')';
+    document.getElementById('btnProblem').textContent='🔴 Action Needed ('+danger+')';
+  }
+
   let activeFilter='all';
   function setFilter(f,btn){activeFilter=f;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');applyFilters();}
   function applyFilters(){
@@ -3362,7 +3380,7 @@
       else if(activeFilter==='active') match=r.dataset.vendorstatus==='active';
       else if(activeFilter==='inactive') match=r.dataset.vendorstatus==='not active';
       else if(activeFilter==='expiring') match=r.dataset.expiring==='true';
-      else if(activeFilter==='problem') match=r.dataset.status==='expired'||r.dataset.status==='missing';
+      else if(activeFilter==='problem') match=r.dataset.vendorstatus==='active'&&(r.dataset.status==='problem'||r.dataset.status==='missing');
       const matchSearch=!q||r.dataset.name.includes(q)||r.dataset.poc.includes(q);
       const show=match&&matchSearch;
       r.style.display=show?'':'none';
@@ -3371,5 +3389,6 @@
     document.getElementById('countLabel').textContent=`Showing ${visible} vendor${visible!==1?'s':''}`;
     document.getElementById('noResults').style.display=visible===0?'block':'none';
   }
+  updateSummary();
 </script>
 </body></html>
